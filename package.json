@@ -1,10 +1,10 @@
 {
-  "name": "cascader",
-  "widgetName": "Cascader",
+  "name": "treeview",
+  "widgetName": "TreeView",
   "version": "1.0.0",
   "description": "Template repo for legacy custome wiget",
-  "copyright": "2021 Mendix",
-  "author": "Liu Wengao <wengao.liu@siemens.com>",
+  "copyright": "Jelte Lagendijk 2019",
+  "author": "Jelte Lagendijk <jelte.lagendijk@mendix.com>",
   "config": {
     "widgetPath": "./tests/testProject/widgets",
     "projectPath": "./tests/testProject/",
@@ -32,7 +32,7 @@
     "generateTypings": "gulp generateTypings --gulpfile script/gulp.js",
     "openTestProject": "start tests/testProject/testProject.mpr",
     "backupTestProject": "cmd /c (if not exist dummy\\deployment\\data\\database\\hsqldb\\default (mkdir dummy\\deployment\\data\\database\\hsqldb\\default) else (echo skip 1)) && (if not exist dummy\\widgets (mkdir dummy\\widgets) else (echo skip 2)) && copy tests\\testProject\\testProject.mpr dummy\\ /Y && copy tests\\testProject\\deployment\\data\\database\\hsqldb\\default\\default.script dummy\\deployment\\data\\database\\hsqldb\\default\\",
-    "postbackupTestProject": "cmd /c copy tests\\testProject\\widgets\\com.mendix.widget.custom.Cascader.mpk dummy\\widgets\\",
+    "postbackupTestProject": "cmd /c copy tests\\testProject\\widgets\\com.mendix.widget.custom.TreeView.mpk dummy\\widgets\\",
     "restoreTestProject": "cmd /c xcopy dummy tests\\testProject /E /Y"
   },
   "license": "Apache-2.0",
@@ -57,13 +57,19 @@
     "webpack-bundle-analyzer": "^3.6.0"
   },
   "dependencies": {
-    "ahooks": "^2.10.14",
+    "@ant-design/icons": "^4.6.2",
     "@bem-react/classname": "^1.5.6",
     "@jeltemx/mendix-react-widget-utils": "^0.9.0",
     "antd": "^4.15.5",
+    "array-to-tree": "^3.3.2",
     "big.js": "^5.2.2",
     "classnames": "^2.2.6",
-    "mobx": "^6.3.10",
-    "mobx-react": "^7.2.1"
+    "core-js": "^3.6.4",
+    "debounce": "^1.2.0",
+    "mobx": "^4.15.7",
+    "mobx-react": "^6.3.1",
+    "react-mustache-template-component": "^1.0.0",
+    "react-resize-detector": "^4.2.1",
+    "store2": "^2.12.0"
   }
 }
